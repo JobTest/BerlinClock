@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNull;
 
 /**
 * @author Lazarchuk Aleksandr
-* @version 1.0
+* @version 1.1
 * @date 28/06/2015
 * *********************************************************
 * The test convertTime function for different time formats:

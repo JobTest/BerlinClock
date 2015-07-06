@@ -2,10 +2,11 @@ package com.berlinclock;
 
 /**
  * @author Lazarchuk Aleksandr
- * @version 1.0
+ * @version 1.1
  * @date 28/06/2015
- * ***************************
- * The Berlin Clock interface:
+ * {@link http://www.3quarks.com/en/TimeConverter/}
+ * ************************************************
+ * The interface 'Berlin Clock':
  */
 public interface IBerlinClock {
 
@@ -13,6 +14,6 @@ public interface IBerlinClock {
      * @param time
      * @return 'O RROO RRRO YYROOOOOOOO YYOO'
      */
-    String convertTime(String time);
+    String convertTime(String time) throws IllegalArgumentException;
 
 }

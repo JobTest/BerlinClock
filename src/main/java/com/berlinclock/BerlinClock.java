@@ -2,11 +2,10 @@ package com.berlinclock;
 
 /**
  * @author Lazarchuk Aleksandr
- * @version 1.0
+ * @version 1.1
  * @date 28/06/2015
- * {@link http://www.3quarks.com/en/TimeConverter/}
- * ************************************************
- * The Berlin Clock object:
+ * ************************
+ * The 'Berlin Clock':
  */
 public abstract class BerlinClock implements IBerlinClock {
 

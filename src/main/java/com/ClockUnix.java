@@ -1,31 +1,28 @@
 package com;
 
 import com.berlinclock.BerlinClock;
+import org.apache.commons.lang3.StringUtils;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * @author Lazarchuk Aleksandr
- * @version 1.0
+ * @version 1.1
  * @date 28/06/2015
  * *********************************************
  * convertTime implements for Clock-Unix format:
+ * param time 'UNIX'
+ * return 'O RROO RRRO YYROOOOOOOO YYOO'
  */
 public class ClockUnix extends BerlinClock {
 
-    /**
-     *
-     * @param time 'UNIX'
-     * @return 'O RROO RRRO YYROOOOOOOO YYOO'
-     */
+    public static final String PATTERN_CLOCK_UNIX = "^[0-9]+$";
+
     @Override
-    public  String convertTime(String time){
-        if(time != null)
-        {
-            Pattern patternClockUnix = Pattern.compile("^[0-9]+$");
-            Matcher   matchClockUnix = patternClockUnix.matcher(time);
-            if( matchClockUnix.matches() ){
+    public  String convertTime(String time) throws IllegalArgumentException {
+        if(!StringUtils.isEmpty(time) && !StringUtils.isBlank(time)) {
+            Pattern patternClockUnix = Pattern.compile(PATTERN_CLOCK_UNIX);
+            if( patternClockUnix.matcher(time).matches() ){
                 int   aTime = Integer.valueOf(time).intValue();
                 int   hours = aTime / 60 / 60;
                 int minutes = (aTime - (hours * 60 * 60)) / 60;
@@ -37,7 +34,7 @@ public class ClockUnix extends BerlinClock {
             }
             return BerlinClock.TIME_ZERO;
         } else {
-            return null;
+            throw new IllegalArgumentException("Illegal Argument");
         }
     }
 }
