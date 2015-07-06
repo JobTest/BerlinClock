@@ -17,7 +17,7 @@ import static org.junit.Assert.assertNull;
 * *********************************************************
 * The test convertTime function for different time formats:
 */
-public class TimeConverterTest {
+public class BerlinClockTest {
 
     private IBerlinClock clock24, clock12, clockUnix;
 
